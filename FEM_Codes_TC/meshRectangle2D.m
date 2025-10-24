@@ -1,5 +1,5 @@
 clear all; close all; clc;
-save_file=0;
+save_file=1;
 
 folder=['D:\20081\MATLAB Output\Paper-2_Outputs\' ...
     'Paper-2_Multi_layer_domain\FEM_Meshes\'];
@@ -7,8 +7,8 @@ time = datestr(datetime('now'),'yyyymmdd_HHMMSS');
 prefix = [folder,time];
 
 %%
-LS=[0,100,0.25,0.5];
-[pS,tS,pS_1DB,tS_1DB]=Rectangle2D(LS,0.06,50,'edge',[1,3],[prefix,'_S']);
+LS=[0,100,0.1,0.2];
+[pS,tS,pS_1DB,tS_1DB]=Rectangle2D(LS,0.03,50,'edge',[1,3],[prefix,'_S']);
 % whos tS_1DB tS
 bottom_pS = pS_1DB(1,:);
 bottom_tS = tS_1DB(1:2,:);
@@ -25,8 +25,8 @@ save('top_tS_1D.mat','-mat','top_tS')
 end
 
 %%
-LC=[0,100,0,0.25];
-[pC,tC,pC_1DB,tC_1DB]=Rectangle2D(LC,0.06,50,'edge',[1,3],[prefix,'_C']);
+LC=[0,100,0,0.1];
+[pC,tC,pC_1DB,tC_1DB]=Rectangle2D(LC,0.03,50,'edge',[1,3],[prefix,'_C']);
 bottom_pC = pC_1DB(1,:);
 bottom_tC = tC_1DB(1:2,:);
 top_pC    = pC_1DB(2,:);
@@ -89,4 +89,5 @@ xlim([Lxa-d,Lxb+d])
 ylim([Lya-d,Lyb+d])
 saveas(fig,[prefix,'_mesh.png']);
 saveas(fig,[prefix,'_mesh.fig']);
+
 end

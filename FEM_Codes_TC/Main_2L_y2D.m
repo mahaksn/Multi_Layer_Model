@@ -9,7 +9,7 @@ pattern_detected = false;
 tol=1e-9;
 % dx=0.115;
 % dy=0.115;
-T=5000;
+T=500;
 dt=0.001;
 
 %% Load Mesh Data: p-nodes; t-elements;
@@ -30,8 +30,8 @@ nS=length(pS);
 % nC = size(pC,2);
 % nS = size(pS,2);
 
-LS=[0,100,0.25,0.5];
-LC=[0,100,0,0.25];
+LS=[0,100,0.1,0.2];
+LC=[0,100,0,0.1];
 
 %% Parameters
 % Hs=abs(LS(3)-LS(4)); Hc=abs(LC(3)-LC(4)); k=2;
@@ -44,7 +44,7 @@ HS=abs(LS(3)-LS(4)); HC=abs(LC(3)-LC(4));
 % a=1.82; b=1;
 % a=2.1; b=1.1;
 a=0.05; b=0.5;
-etaS = 0.25;%[0.1 1 10 0.01 0.001]; 
+etaS = [0.1 1 10 0.01 0.001]; 
 etaC=etaS;
 D_S=1; D_C=20;
 
@@ -318,4 +318,5 @@ end
 %%
 fprintf('\nDone!\n');
 toc
+
 diary OFF

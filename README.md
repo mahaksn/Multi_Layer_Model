@@ -1,5 +1,10 @@
 1. Generate the mesh  
    Run `meshRectangle.m` to create the nodes and edges for the computational domain.  
+   - This script generates the following files:  
+     `pS_2D.m`, `pC_2D.m`, `tS_2D.m`, `tC_2D.m`,  
+     `bottom_pC_1D.m`, `bottom_pS_1D.m`, `bottom_tC_1D.m`, `bottom_tS_1D.m`,  
+     `top_pS_1D.m`, `top_pC_1D.m`, `top_tC_1D.m`, `top_tS_1D.m`.  
+   - These files contain the edges and nodes for the entire domain, as well as the top and bottom boundary edges of the rectangular domain.  
    - You can adjust the *domain size* and *mesh size* within this script.
 
 2. Run the main simulation  
